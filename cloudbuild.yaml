@@ -1,6 +1,6 @@
 steps:
  
-  - id: docker_build_go
+  - id: docker_build
     name: 'gcr.io/cloud-builders/docker'
     args: ['build','-t','gcr.io/$PROJECT_ID/go:latest', './desafio-ci-golang']
   
