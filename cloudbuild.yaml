@@ -8,7 +8,7 @@ steps:
 
   - id: go_test
     name: 'gcr.io/cloud-builders/go'
-    args: ['test','./desafio-CI-goLang/go-workspace/src/soma']
+    args: ['test','/desafio-CI-goLang/go-workspace/src/soma']
     env: ['GOPATH=.']
 
   - id: go_build
