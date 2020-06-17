@@ -1,0 +1,24 @@
+steps:
+  - id: go_version
+    name: 'gcr.io/cloud-builders/go'
+    args: ['version']
+    env: ['GOPATH=.']
+
+  - id: go_test
+    name: 'gcr.io/cloud-builders/go'
+    args: ['test','./devops/docker/challenge03-CI-Go/src/soma']
+    env: ['GOPATH=.']
+
+  - id: go_build
+    name: 'gcr.io/cloud-builders/go'
+    args: ['build', '-o', './desafio-CI-goLang/go-workspace/src/soma', './desafio-CI-goLang/go-workspace/src/soma']
+    env: ['GOPATH=.']
+
+  - id: docker_build
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['build','-t','gcr.io/$PROJECT_ID/desafio-CI-goLang:latest', './devops/docker/desafio-CI-goLang/']
+
+
+
+images:
+  - 'gcr.io/$PROJECT_ID/desafio-CI-goLang:latest'
