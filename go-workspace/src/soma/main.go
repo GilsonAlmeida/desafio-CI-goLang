@@ -3,10 +3,10 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("Resultado da soma!!!",soma(5,5))
+	fmt.Println("Resultado da soma!!!",Soma(5,5))
 }
 
-func soma(a int,b int) int {
+func Soma(a int,b int) int {
 	return a + b ;
 }
 
